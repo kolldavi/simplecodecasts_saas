@@ -1,6 +1,4 @@
 == README
-https://rocky-stream-15179.herokuapp.com/
-
 
 Coder Manual Project Application
 Subscription-based web application
