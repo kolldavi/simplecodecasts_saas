@@ -16,6 +16,7 @@ class ProfilesController < ApplicationController
       flash[:success] = "Profile Updated!"
       redirect_to user_path( params[:user_id] )
     else
+      flash[:danger] = 'Sorry, your profile has not been created. Please make sure you are completing all required fields.'
       render action: :new
     end
   end
@@ -37,7 +38,7 @@ class ProfilesController < ApplicationController
   end
   private
     def profile_params
-      params.require(:profile).permit(:first_name, :last_name, :avatar, :job_title, :phone_number, :contact_email, :description)
+      params.require(:profile).permit(:first_name, :last_name, :avatar, :job_title, :phone_number, :contact_email, :description, :avatar,)
     end
     def only_current_user
       @user = User.find( params[:user_id] )
