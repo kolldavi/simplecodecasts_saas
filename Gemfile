@@ -42,7 +42,8 @@ gem 'stripe', '1.16.1'
 # Use figaro to hide secret keys
 gem 'figaro', '1.0.0'
 
-gem 'paperclip', '4.2.1'
+gem 'paperclip'
+gem 'aws-sdk-v1'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '3.1.7'
 # Use unicorn as the app server
