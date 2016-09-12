@@ -28,6 +28,9 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    aws-sdk-v1 (1.66.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
     bcrypt (3.1.11)
     bootstrap-sass (3.3.1.0)
       sass (~> 3.2)
@@ -73,9 +76,13 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
+    mini_portile2 (2.1.0)
     minitest (5.9.0)
     multi_json (1.12.1)
     netrc (0.11.0)
+    nokogiri (1.6.8)
+      mini_portile2 (~> 2.1.0)
+      pkg-config (~> 1.1.7)
     orm_adapter (0.5.0)
     paperclip (4.2.1)
       activemodel (>= 3.0.0)
@@ -83,6 +90,7 @@ GEM
       cocaine (~> 0.5.3)
       mime-types
     pg (0.18.4)
+    pkg-config (1.1.7)
     polyglot (0.3.5)
     rack (1.5.5)
     rack-test (0.6.3)
@@ -161,6 +169,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aws-sdk-v1
   bootstrap-sass (= 3.3.1)
   coffee-rails (= 4.0.0)
   devise (= 3.4.1)
@@ -168,7 +177,7 @@ DEPENDENCIES
   font-awesome-sass (= 4.2.0)
   jbuilder (= 2.0)
   jquery-rails
-  paperclip (= 4.2.1)
+  paperclip
   pg
   rails (= 4.1.0)
   rails_12factor

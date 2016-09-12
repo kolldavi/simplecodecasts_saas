@@ -4,14 +4,14 @@ Rails.application.configure do
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
-  config.cache_classes = false
+  config.cache_classes = true
 
   # Do not eager load code on boot.
-  config.eager_load = false
+  config.eager_load = true
 
   # Show full error reports and disable caching.
-  config.consider_all_requests_local       = true
-  config.action_controller.perform_caching = false
+  config.consider_all_requests_local       = false
+  config.action_controller.perform_caching = true
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
@@ -31,11 +31,20 @@ Rails.application.configure do
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
-
+  
+ 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
   
-  # Paperclip config:
-Paperclip.options[:image_magick_path] = "/opt/ImageMagick/bin"
-Paperclip.options[:command_path] = "/opt/ImageMagick/bin"
+  config.paperclip_defaults = {
+    :storage => :s3,
+    # host name not needed if region is US Standard
+    # :s3_host_name => 's3-us-west-2.amazonaws.com',
+    :s3_region => 'us-west-2',
+    :s3_credentials => {
+      :bucket => ENV['S3_BUCKET_NAME'],
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    }
+  }
 end
