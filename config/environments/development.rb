@@ -40,7 +40,7 @@ Rails.application.configure do
     :storage => :s3,
     # host name not needed if region is US Standard
     # :s3_host_name => 's3-us-west-2.amazonaws.com',
-    :s3_region => 'us-west-2',
+    :s3_region => 'us-east-1',
     :s3_credentials => {
       :bucket => ENV['S3_BUCKET_NAME'],
       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
